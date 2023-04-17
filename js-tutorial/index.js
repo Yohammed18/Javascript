@@ -32,11 +32,84 @@ console.log("15 * 14 =",sumMultiplication)
 console.log("15 / 14 =",sumDivision)
 //accept user input can be done using the prompt function or via a input text
 //window prompt
-let userName = prompt("What is your username?")
-console.log("Your usernmae is",userName)
+// let userName = prompt("What is your username?")
+// console.log("Your usernmae is",userName)
 //html text box
 let username;
 document.getElementById("myButton").onclick = function(){
 username = document.getElementById("myText").value;
 console.log("You Username is",username)
 }
+//Type conversion - the ability to change the datatype of a value to another
+let inputAge;
+// inputAge = prompt('How old are you?')
+console.log(typeof(inputAge));
+inputAge = parseInt(inputAge);
+console.log(typeof(inputAge))
+console.log("You are",inputAge++,". You will be",inputAge,'next.')
+//const is a variable that can't be changed
+const PI = 3.14159
+console.log(PI)
+//calculator game using function
+
+let result;
+let digitOne;
+let digitTwo;
+//addition
+document.getElementById("add").onclick = function(){
+    digitOne = Number(document.getElementById("numOne").value);
+    digitTwo = Number(document.getElementById("numTwo").value);
+    result = digitOne + digitTwo;
+    document.getElementById("result").innerHTML = result;
+    }
+//subtraction
+document.getElementById("sub").onclick = function(){
+    digitOne = Number(document.getElementById("numOne").value);
+    digitTwo = Number(document.getElementById("numTwo").value);
+    result = digitOne - digitTwo;
+    document.getElementById("result").innerHTML = result;
+    }
+//mulitplication
+document.getElementById("minus").onclick = function(){
+    digitOne = Number(document.getElementById("numOne").value);
+    digitTwo = Number(document.getElementById("numTwo").value);
+    result = digitOne * digitTwo;
+    document.getElementById("result").innerHTML = result;
+    }
+//division
+document.getElementById("div").onclick = function(){
+    digitOne = Number(document.getElementById("numOne").value);
+    digitTwo = Number(document.getElementById("numTwo").value);
+    result = digitOne / digitTwo;
+    document.getElementById("result").innerHTML = result;
+    }
+
+//counter program
+let count = 0;
+document.getElementById("resetBtn").onclick = function(){
+    count = 0;
+    document.getElementById("countLabel").innerHTML = count;
+    console.log("You reset the value back to:",count);
+    }
+document.getElementById("decreaseBtn").onclick = function(){
+    count -=1
+    document.getElementById("countLabel").innerHTML = count;
+    console.log("You reset the value back to:",count)
+    }
+document.getElementById("increaseBtn").onclick = function(){
+    count +=1
+    document.getElementById("countLabel").innerHTML = count;
+    console.log("You reset the value back to:",count)
+    }
+    
+//useful properties and methods when manipulated a string value
+let nameManipulation = "Michael Jordan"
+let phoneNumber = "111-222-3333"
+console.log(nameManipulation.length)
+console.log(nameManipulation.charAt(0))
+console.log(nameManipulation.indexOf('l'))
+console.log(nameManipulation.lastIndexOf('a'))
+console.log(phoneNumber.replaceAll('-','/'))
+//the slice() string methods extracs a section of a string and returns it as a new string, witout modigying the original string
+console.log(nameManipulation.slice(0, nameManipulation.indexOf(" ")))
+console.log(nameManipulation.slice(nameManipulation.indexOf(" ")+1))

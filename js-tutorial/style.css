@@ -1,0 +1,8 @@
+#counter{
+    text-align: center;
+}
+
+#countLabel{
+    display: block;
+    font-size: 100px;
+}
