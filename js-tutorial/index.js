@@ -113,3 +113,85 @@ console.log(phoneNumber.replaceAll('-','/'))
 //the slice() string methods extracs a section of a string and returns it as a new string, witout modigying the original string
 console.log(nameManipulation.slice(0, nameManipulation.indexOf(" ")))
 console.log(nameManipulation.slice(nameManipulation.indexOf(" ")+1))
+
+//If, for, while, do-while statements
+let sign = 'left';
+
+if(sign == 'left'){
+    console.log('You are turning LEFT')
+} else if(sign == 'right'){
+    console.log('You are turning RIGHT')
+} else{
+    console.log("We have no directions. The game is over")
+}
+
+//check boolean value
+let online = true;
+if(online){
+    console.log("You are online")
+} else{
+    console.log("You are off line")
+}
+
+//Subscribe checkbox
+//declare a variable that will store the value of the checkbox
+//you can access the radio button & check boxes via t he .checked property
+let isChecked = false;
+document.getElementById("mycheckbox").onclick = function(){
+
+    isChecked = document.getElementById("isBoxChecked");
+
+   if(isChecked.checked){
+    document.getElementById("subscribed").innerText = "You have subscribed!"
+   } else{
+    document.getElementById("subscribed").innerText = "You haven't clicked the checkbox to subscribe!"
+   }
+}
+
+//Switch statements used to examines value for a potential match against many case clauses
+let grade = 'A';
+switch(grade){
+    case  'A':
+        console.log("You got an A.");
+        break;
+    case  'B':
+        console.log("You got an B.");
+        break;
+    case  'C':
+        console.log("You got an C.");
+        break;
+    case  'D':
+        console.log("You got an D.");
+        break;
+    case  'F':
+        console.log("You got an F. You failed the class.");
+        break;    
+}
+//while loop
+let whileInt = 0
+console.log("WHILE LOOP GAME")
+while(whileInt < 10){
+    console.log("Value:",whileInt)
+    whileInt++
+}
+//do-while loop
+let condition = 0;
+do {
+    console.log("Print This 5 times",condition)
+    condition++
+} while (condition <= 5);
+
+//For Loop game
+let  loopValue;
+let elementArray = [];
+
+document.getElementById("loopBtn").onclick = function(){
+    loopValue = Number(document.getElementById("textLoop").value);
+    console.log("Value is:",loopValue)
+
+    for(let index = 1; index <= loopValue; index++){
+        elementArray.push(index*2)
+    }
+    
+    document.getElementById("labelLoop").innerText = "The For Loop values in the array are ["+elementArray+"]";
+}

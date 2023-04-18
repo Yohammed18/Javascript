@@ -6,3 +6,16 @@
     display: block;
     font-size: 100px;
 }
+
+#checkbox{
+    text-align: center;
+}
+
+#subscribed{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+#forLoop{
+    text-align: center;
+}
