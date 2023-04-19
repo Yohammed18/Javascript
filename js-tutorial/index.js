@@ -269,4 +269,101 @@ fruits.shift()//Removes the first element from an array and returns it. If the a
 console.log(fruits)
 
 console.log(`lenth of the fruits array: ${fruits.length}`)
-console.log(fruits.indexOf('lemon'))
+console.log(fruits.indexOf('lemon'))//Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
+
+//LOOP THROUGH AN ARRAY
+let prices = [4,19,2,10,-10,]
+//Loop 1
+console.log("1st way to loop through an array")
+for (const key in prices) {
+    if (Object.hasOwnProperty.call(prices, key)) {
+        const element = prices[key];
+        console.log(`Element: ${element}`)
+    }
+}
+//Loop 2
+console.log("2nd way to loop through an array")
+prices.forEach(element => {
+    console.log("Element:",element)
+});
+//Loop 3
+console.log("3rd way to loop through an array")
+for(let i = 0; i <= prices.length - 1; i++){
+    console.log("Element:",prices[i])
+}
+//Loop 4
+console.log("4th way to loop through an array")
+for(let price of prices){
+    console.log("Element:",price)
+}
+
+//sort arrays 
+console.log(fruits)
+fruits.sort()
+console.log(fruits)
+console.log(prices)
+prices.sort().reverse()
+console.log(prices)
+
+//spread operator - allows us to quickly copy all or part of an existing array or object into another array or object.
+
+//Vehicle
+const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
+  }
+console.log(myVehicle)
+//more inforation that need to be added to the vehicle
+const updateMyVehicle = {
+    type: 'car',
+    year: 2021, 
+    color: 'yellow'
+}
+console.log(updateMyVehicle)
+//update the vehicle with the new information
+const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
+console.log(myUpdatedVehicle)
+
+//rest parameters - The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent variadic functions in JavaScript.
+function sum(...theArgs) {
+    let total = 0;
+    for (const arg of theArgs) {
+      total += arg;
+    }
+    return total;
+  }
+  
+  console.log(sum(1, 2, 3));
+  // Expected output: 6
+  
+  console.log(sum(1, 2, 3, 4));
+  // Expected output: 10
+
+  //callback is a function passed as an argument to anotehr function. 
+  /*The benefit of using a callback function is that you can wait for the result of a previous function call and then execute another function call.  */
+
+// let sumTotal = sum(2,3)
+// displayConsole(sumTotal)
+// displayToDOM(sumTotal)
+
+// function sum(x,y){
+//     let result = x+y;
+//     return result;
+// }
+ 
+
+newSum(9,9, displayToDOM);
+
+function newSum(x,y, passFun){
+    let result = x+y
+    passFun(result)
+}
+
+function displayToDOM(output){
+document.getElementById("callBack").innerHTML = `Callback function Game.<h1>${output}</h1>`;
+}
+
+function displayConsole(output){
+    console.log(output)
+} 
