@@ -376,11 +376,6 @@ function displayConsole(output){
 
 
 //function expression - The function keyword can be used to define a function inside an expression. (You can also define functions using the function declaration or the arrow syntax.)
-const greeting = function(){
-    console.log("HELLO WORLD!!")
-}
-greeting()
-
 //create a function expression that will prompt Welcome To my page in you html file 
 const clickMe = function(){
     document.getElementById('clickMe').innerHTML = `<h3>YOU CLICKED ME :-)</h3>`;
@@ -391,3 +386,60 @@ const unClickMe = function(){
 const resetClick = function(){
     document.getElementById('clickMe').innerHTML = ``;
 }
+
+//An arrow function expression is a compact alternative to a traditional function expression, with some semantic differences and deliberate limitations in usage:
+/*Arrow functions don't have their own bindings to this, arguments, or super, and should not be used as methods.
+Arrow functions cannot be used as constructors. Calling them with new throws a TypeError. They also don't have access to the new.target keyword.
+Arrow functions cannot use yield within their body and cannot be created as generator functions. */
+const greeting = (newName) => {
+    console.log(`Hello ${newName}`)
+}
+greeting('Michael Jordan!')
+
+//data scructure MAP - The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value
+const store = new Map([
+    ['Jordan',23],
+    ['Bryant',24],
+    ['James',6],
+    ['O\'Neal',32],
+    ['Iverson',3]
+])
+
+store.forEach((value, key) => console.log(`Player: ${key}, Jersey: ${value}`))
+
+//objects in javascript are a group of properties and methods. properties is what the object has and methods are things the objects can do.
+
+const car ={
+    make: 'Tesla',
+    model: 'Y',
+    color: 'Grey',
+    year: 2023,
+
+    drive : function(){
+        console.log(`Your ${this.make} is driving`)
+    },
+
+    break : function(){
+        console.log(`You stop on the break`)
+    }
+}
+car.break()
+
+//Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.
+
+class Player{
+    score = 0;
+
+    pause(){
+        console.log(`You paused the game`)
+    }
+
+    exit(){
+        console.log(`You exit the game`)
+    }
+}
+
+const player = new Player();
+
+player.pause()
+player.exit()
