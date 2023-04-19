@@ -229,8 +229,7 @@ function pythogoreanTheorem(a,b){
 console.log("The Value of C:",pythogoreanTheorem(3,4))
 
 //ternary operator consist of three parts.
-//the condition followed by the ? mark, and the two option ifTrue : ifFalse
-
+//the condition followed by the ? mark, and the two option ifTrue : ifFalse - a short cut for an if/else statement. very straighforward and save lines of code . Often use when having boolean cases
 function checkAge(ageNum){
     return ageNum >= 10 ? true : false;
 }
@@ -238,3 +237,36 @@ console.log(checkAge(1))
 console.log(checkAge(10))
 console.log(checkAge(9))
 console.log(checkAge(22))
+
+/*
+Variable Scope
+let used for block scope variables{}
+var used for functions(){} 
+but if used in a for loops, than the variable can be access. Var effects global varibale in the dom/window
+*/
+
+//Template literals = delimited with (') instead of double or single quotes allows embedded variabels and expression
+
+let literalUsername = "Kevin Durant"
+let itemCart = 9;
+let total = 75;
+console.log(`Welcome user ${literalUsername}.`);
+console.log(`You got ${itemCart} in your cart.`);
+console.log(`Your total is $${total}`);
+
+//toLocaleString() function returns a string with a language sensiteive representation of this number. cc https://www.w3schools.com/jsref/jsref_tolocalestring.asp for more information
+
+
+//ARRAYS = Arrays represent multiple data elements of the same type using a single name. Accessing or searching an element in an array is easy by using the index number.
+let fruits = ['apple','orange','pear','banana']
+console.log(fruits)
+fruits.pop()//Removes the last element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+fruits.push('lemon')//Add/Appends new elements to the end of an array, and returns the new length of the array.
+console.log(fruits)
+fruits.unshift('mango')//Inserts new elements at the start of an array, and returns the new length of the array.
+console.log(fruits)
+fruits.shift()//Removes the first element from an array and returns it. If the array is empty, undefined is returned and the array is not modified.
+console.log(fruits)
+
+console.log(`lenth of the fruits array: ${fruits.length}`)
+console.log(fruits.indexOf('lemon'))
