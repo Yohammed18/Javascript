@@ -367,3 +367,27 @@ document.getElementById("callBack").innerHTML = `Callback function Game.<h1>${ou
 function displayConsole(output){
     console.log(output)
 } 
+
+// array.forEach() 🔚
+//array.map() ⚙️
+// array.filter() 🗑️
+// array.reduce()
+//array.sort()
+
+
+//function expression - The function keyword can be used to define a function inside an expression. (You can also define functions using the function declaration or the arrow syntax.)
+const greeting = function(){
+    console.log("HELLO WORLD!!")
+}
+greeting()
+
+//create a function expression that will prompt Welcome To my page in you html file 
+const clickMe = function(){
+    document.getElementById('clickMe').innerHTML = `<h3>YOU CLICKED ME :-)</h3>`;
+}
+const unClickMe = function(){
+    document.getElementById('clickMe').innerHTML = `<h3>You unclicked me :-(</h3>`;
+}
+const resetClick = function(){
+    document.getElementById('clickMe').innerHTML = ``;
+}
