@@ -195,3 +195,46 @@ document.getElementById("loopBtn").onclick = function(){
     
     document.getElementById("labelLoop").innerText = "The For Loop values in the array are ["+elementArray+"]";
 }
+
+/*
+Fizz buzz is a group word game for children to teach them about division. Players take turns to count incrementally, replacing any number divisible by three with the word "fizz", and any number divisible by five with the word "buzz", and any number divisible by both 3 and 5 with the word "fizzbuzz". */
+let fizNum = 20;
+
+//for loop
+for(let i = 1; i <= fizNum; i++){
+    //first case we are testing the fizzbuzz
+    if(i%3 == 0 && i%5 == 0){
+        console.log("fizbuzz");
+    } else if(i%5==0){
+        console.log("buzz");
+    } else if(i%3==0){
+        console.log("fizz");
+    }else{
+        console.log("number:",i)
+    }
+}
+
+//function = a set of statements that performs a task or calculates a value, but for a procedure to qualify as a function, it should take some input and return an output where there is some obvious relationship between the input and the output.
+function myName(name){
+    console.log("Hi, my name is",name+".")
+}
+myName("Michael")
+
+//create a function that returs the sum of the area of the right triangle
+function pythogoreanTheorem(a,b){
+    let c = Math.pow(a,2) + Math.pow(b,2);
+    c = Math.sqrt(c)
+    return c;
+}
+console.log("The Value of C:",pythogoreanTheorem(3,4))
+
+//ternary operator consist of three parts.
+//the condition followed by the ? mark, and the two option ifTrue : ifFalse
+
+function checkAge(ageNum){
+    return ageNum >= 10 ? true : false;
+}
+console.log(checkAge(1))
+console.log(checkAge(10))
+console.log(checkAge(9))
+console.log(checkAge(22))
