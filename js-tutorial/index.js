@@ -443,3 +443,43 @@ const player = new Player();
 
 player.pause()
 player.exit()
+
+//constructor is a special methods of a class that may accepts arguments and assign properties to the class variables when the class is instantiated 
+class Student{
+    
+    constructor(name, age, gpa){
+        this.name = name;
+    }
+
+    study(){
+        console.log('STUDENT BIO')
+        console.log(`The student name is ${this.name}.`);
+        console.log(`The student is ${this.age} years old.`)
+        console.log(`He has a ${this.gpa} gpa.`)
+    }
+}
+
+
+const s1 = new Student('Mohammed', 31, 3.7)
+s1.study()
+//static key word belongs to the class not the object
+//super key word referes to a the parent class and is used to invoke the constructor of a parant classs. useful for code reusability super(pass parameters)
+//get (getter ) binds an object property to a function when that property is access (use the this._variableName = variable name to make it private) we use getter to increase data security
+//set (setter) binds an object property to a function when that property is assigned a value
+
+class Motorcycle{
+    constructor(power){
+        this._power = power;
+    }
+
+    get power(){
+        return `${this._power}hp`
+    }
+}
+
+
+const motor = new Motorcycle(50);
+
+motor.power = 100
+
+console.log(motor.power)
