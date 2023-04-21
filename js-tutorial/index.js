@@ -83,6 +83,11 @@ document.getElementById("div").onclick = function(){
     result = digitOne / digitTwo;
     document.getElementById("result").innerHTML = result;
     }
+document.getElementById('clearElement').onclick = function(){
+    //clear the 1st and second number
+    document.getElementById("numOne").value = ''
+    document.getElementById("numTwo").value = ''
+}
 
 //counter program
 let count = 0;
@@ -476,10 +481,49 @@ class Motorcycle{
         return `${this._power}hp`
     }
 }
-
-
 const motor = new Motorcycle(50);
-
 motor.power = 100
-
 console.log(motor.power)
+
+let date = new Date('Feburary 18, 1989');
+console.log(date.toLocaleString())
+
+//learning the difference between synchronous and asynchronus code
+
+//console.time() tracks how long an operation takes by giving each timer a unique name
+//start 
+console.time('response time')
+setTimeout(()=>console.log("HELLO!"), 3000)//print hello after 3 seconds past
+console.timeEnd('response time')
+
+//The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value or object representing the eventual completion or failure of an asynchronous operation.
+// const promise = new Promise((resolve, reject) =>{
+//     let fileLoaded = true;
+
+//     if(fileLoaded){
+//         resolve("File loaded")
+//     }else{
+//         reject("file Not loaded")
+//     }
+// })
+const wait = (time) => new Promise(resolve =>{
+    setTimeout(resolve,time)
+})
+
+wait(5000).then(() => console.log('Thanks for waiting!'))
+
+//async makes function return a Promise object
+//The async function declaration declares an async function where the await keyword is permitted within the function body. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+async function loadFile(){
+    let fileLoaded = true;//false
+
+    if(fileLoaded){
+        return 'File Loaded' //Promise.resolve() can also work
+    }else{
+        throw 'File Not loaded' //Promise.reject() can also work
+    }
+}
+loadFile().then(value => console.log(value))
+       .catch(error => console.log(error));
+
+//
