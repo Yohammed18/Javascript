@@ -343,14 +343,14 @@ function sum(...theArgs) {
   //callback is a function passed as an argument to anotehr function. 
   /*The benefit of using a callback function is that you can wait for the result of a previous function call and then execute another function call.  */
 
-// let sumTotal = sum(2,3)
-// displayConsole(sumTotal)
-// displayToDOM(sumTotal)
+let sumTotal = sum(2,3)
+displayConsole(sumTotal)
+displayToDOM(sumTotal)
 
-// function sum(x,y){
-//     let result = x+y;
-//     return result;
-// }
+function sum(x,y){
+    let result = x+y;
+    return result;
+}
  
 
 newSum(9,9, displayToDOM);
